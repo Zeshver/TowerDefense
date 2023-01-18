@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d33207912988442a34426d5207290c, type: 3}
+  m_Name: Tower_03
+  m_EditorClassIdentifier: 
+  goldCost: 5
+  towerGUI: {fileID: 21300000, guid: 996ebf25a5cad7748bc9d2535fe6162b, type: 3}
+  sprite: {fileID: 21300000, guid: 961542bf834d173448be6e9b235a3b66, type: 3}
+  turretProperties: {fileID: 11400000, guid: 51b7c582345bb9440a4de8c899032fbe, type: 2}
