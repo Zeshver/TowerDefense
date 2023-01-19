@@ -1,13 +1,15 @@
 using UnityEngine;
 using SpaceShooter;
 using TMPro;
+using UnityEngine.UI;
 
 namespace TowerDefense
 {
     public class MapLevel : MonoBehaviour
     {
         private Episode m_Episode;
-        [SerializeField] private TextMeshProUGUI m_Text;
+        [SerializeField] private RectTransform m_ResultPanel;
+        [SerializeField] private Image[] m_ResultImage;
         public void LoadLevel()
         {
             LevelSequenceController.Instance.StartEpisode(m_Episode);
@@ -16,7 +18,11 @@ namespace TowerDefense
         public void SetLevelData(Episode episode, int score)
         {
             m_Episode = episode;
-            m_Text.text = $"{score}/3";
+            m_ResultPanel.gameObject.SetActive(score > 0);
+            for (int i = 0; i < score; i++)
+            {
+                m_ResultImage[i].color = Color.white;
+            }
         }
     }
 }

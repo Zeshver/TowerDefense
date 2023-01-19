@@ -51,7 +51,7 @@ namespace SpaceShooter
             TotalStats.time += LevelController.Instance.LevelTime;
             TotalStats.score += Player.Instance.Score;
 
-            int timeBonus = LevelController.Instance.ReferenceTime - (int)LevelController.Instance.LevelTime;
+            int timeBonus = (int) (LevelController.Instance.ReferenceTime - LevelController.Instance.LevelTime);
 
             if(timeBonus > 0)
                 TotalStats.score += timeBonus;
