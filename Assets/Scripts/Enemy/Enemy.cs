@@ -2,6 +2,7 @@ using SpaceShooter;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.UIElements;
+using System;
 
 namespace TowerDefense
 {
@@ -10,6 +11,13 @@ namespace TowerDefense
     {
         [SerializeField] private int m_Damage = 1;
         [SerializeField] private int m_Gold = 1;
+
+        public event Action OnEnd;
+        private void OnDestroy()
+        {
+            OnEnd?.Invoke();
+        }
+
         public void Use(EnemyAsset asset)
         {
             var sr = transform.Find("VisualModel").GetComponent<SpriteRenderer>();
