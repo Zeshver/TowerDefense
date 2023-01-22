@@ -1,6 +1,5 @@
 using UnityEngine;
 using SpaceShooter;
-using TMPro;
 using UnityEngine.UI;
 
 namespace TowerDefense
@@ -10,6 +9,9 @@ namespace TowerDefense
         private Episode m_Episode;
         [SerializeField] private RectTransform m_ResultPanel;
         [SerializeField] private Image[] m_ResultImage;
+
+        public bool IsComplete { get { return gameObject.activeSelf && m_ResultPanel.gameObject.activeSelf; } }
+
         public void LoadLevel()
         {
             LevelSequenceController.Instance.StartEpisode(m_Episode);
