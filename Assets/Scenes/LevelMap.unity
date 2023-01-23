@@ -322,7 +322,6 @@ MonoBehaviour:
     score: 0
   - episode: {fileID: 11400000, guid: 0648cf9f1430e1547aad5b4508e98f5a, type: 2}
     score: 0
-  totalScore: 0
 --- !u!1 &1124415649
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,6 +679,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level_2_2
       objectReference: {fileID: 0}
+    - target: {fileID: 4821810694350080687, guid: 8883cf485642ea64bb2ccf5e889692a3, type: 3}
+      propertyPath: m_Episode
+      value: 
+      objectReference: {fileID: 11400000, guid: 0648cf9f1430e1547aad5b4508e98f5a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8883cf485642ea64bb2ccf5e889692a3, type: 3}
 --- !u!1001 &1120762402391589914
@@ -737,6 +740,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6611383355712393699, guid: ce54690b6d465404396816f329820eca, type: 3}
+      propertyPath: m_Episode
+      value: 
+      objectReference: {fileID: 11400000, guid: 1649536bdd27313438b5d28f63d96cce, type: 2}
     - target: {fileID: 7186714995851185536, guid: ce54690b6d465404396816f329820eca, type: 3}
       propertyPath: m_Camera
       value: 
@@ -802,6 +809,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level_1_1
       objectReference: {fileID: 0}
+    - target: {fileID: 4821810694350080687, guid: 8883cf485642ea64bb2ccf5e889692a3, type: 3}
+      propertyPath: m_Episode
+      value: 
+      objectReference: {fileID: 11400000, guid: 93ccb9f5f8e262f4d89175382571f603, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8883cf485642ea64bb2ccf5e889692a3, type: 3}
 --- !u!4 &2068643470760263672 stripped
