@@ -15,7 +15,7 @@ namespace TowerDefense
 
             while (score != 0 && drawLevel < levels.Length)
             {
-                levels[drawLevel].Initialise();
+                score = levels[drawLevel].Initialise();
                 drawLevel += 1;
             }
 

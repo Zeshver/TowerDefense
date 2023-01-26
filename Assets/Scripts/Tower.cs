@@ -5,7 +5,7 @@ namespace TowerDefense
 {
     public class Tower : MonoBehaviour
     {
-        [SerializeField] private float m_Radius;
+        [SerializeField] private float m_Radius = 4f;
         private Turret[] m_Turrets;
         private Destructible m_Target = null;
 
@@ -41,6 +41,11 @@ namespace TowerDefense
                     m_Target = enter.transform.root.GetComponent<Destructible>();
                 }
             }
+        }
+
+        public void ChangeRadius(float radius)
+        {
+
         }
 
         private void OnDrawGizmosSelected()

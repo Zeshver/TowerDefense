@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 6880222555565516659}
   - component: {fileID: 3853826402519014104}
   m_Layer: 0
-  m_Name: Projectile_04
+  m_Name: ExplosionProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Nickname: 
-  m_Velocity: 5
+  m_Velocity: 15
   m_Lifetime: 1
   m_Damage: 5
   m_ImpactEffectPrefab: {fileID: 0}

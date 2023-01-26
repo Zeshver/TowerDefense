@@ -41,7 +41,7 @@ namespace SpaceShooter
 
             m_Ship.EventOnDeath.AddListener(OnShipDeath);
         }
-            
+
 
         #region Score (current level only)
 

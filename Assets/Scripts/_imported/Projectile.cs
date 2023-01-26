@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using TowerDefense;
 
 namespace SpaceShooter
 {
@@ -25,21 +24,7 @@ namespace SpaceShooter
             
             if (hit)
             {
-                var destructible = hit.collider.transform.root.GetComponent<Destructible>();
-
-                if(destructible != null && destructible != m_Parent)
-                {
-                    destructible.ApplyDamage(m_Damage);
-
-                    if(Player.Instance != null && destructible.HitPoints < 0)
-                    {
-                        if(m_Parent == Player.Instance.ActiveShip)
-                        {
-                            Player.Instance.AddScore(destructible.ScoreValue);
-                        }
-                    }
-                }
-
+                OnHit(hit);
                 OnProjectileLifeEnd(hit.collider, hit.point);
             }
 
@@ -50,6 +35,34 @@ namespace SpaceShooter
 
             transform.position += new Vector3(step.x, step.y, 0);
         }
+
+        private void OnHit(RaycastHit2D hit)
+        {
+            var enemy = hit.collider.transform.root.GetComponent<Enemy>();
+
+            if (enemy != null)
+            {
+                enemy.TakeDamage(m_Damage);                
+            }
+        }
+
+        //private void OnHit(RaycastHit2D hit)
+        //{
+        //    var destructible = hit.collider.transform.root.GetComponent<Destructible>();
+
+        //    if (destructible != null && destructible != m_Parent)
+        //    {
+        //        destructible.ApplyDamage(m_Damage);
+
+        //        if (Player.Instance != null && destructible.HitPoints < 0)
+        //        {
+        //            if (m_Parent == Player.Instance.ActiveShip)
+        //            {
+        //                Player.Instance.AddScore(destructible.ScoreValue);
+        //            }
+        //        }
+        //    }
+        //}
 
         private void OnProjectileLifeEnd(Collider2D collider, Vector2 pos)
         {

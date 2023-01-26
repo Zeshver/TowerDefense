@@ -13,6 +13,7 @@ namespace TowerDefense
         [Header("Game parameters")]
         public float moveSpeed = 1;
         public int hp = 1;
+        public int armor = 0;
         public int score = 1;
         public float radius = 0.2f;
         public int damage = 1;
