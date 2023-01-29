@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Turret_01
   m_EditorClassIdentifier: 
   m_Mode: 2
-  m_ProjectilePrefab: {fileID: 1026726693318392882, guid: acf1a42a2e9f4a447b2ac4fb779f8c64, type: 3}
+  m_ProjectilePrefab: {fileID: -9117254635650094961, guid: acf1a42a2e9f4a447b2ac4fb779f8c64, type: 3}
   m_RateOfFire: 2
   m_EnergyUsage: 0
   m_AmmoUsage: 0

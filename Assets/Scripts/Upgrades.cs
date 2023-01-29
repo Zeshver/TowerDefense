@@ -15,6 +15,15 @@ namespace TowerDefense
             public int level = 0;
         }
 
+        [SerializeField] private UpgradeAsset m_HealthUpgrade;
+        public int Health { get { return GetUpgradeLevel(m_HealthUpgrade); } }
+
+        [SerializeField] private UpgradeAsset m_RadiusUpgrade;
+        public float Radius { get { return GetUpgradeLevel(m_RadiusUpgrade); } }
+
+        [SerializeField] private UpgradeAsset m_AttakSpeedUpgrade;
+        public float AttakSpeed { get { return GetUpgradeLevel(m_AttakSpeedUpgrade); } }
+
         [SerializeField] private UpgradeSave[] m_Save;
 
         private new void Awake()

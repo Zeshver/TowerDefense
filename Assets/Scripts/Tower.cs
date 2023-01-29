@@ -5,13 +5,16 @@ namespace TowerDefense
 {
     public class Tower : MonoBehaviour
     {
-        [SerializeField] private float m_Radius = 4f;
+        [SerializeField] private float m_Radius = 2f;
         private Turret[] m_Turrets;
         private Destructible m_Target = null;
 
         private void Start()
         {
             m_Turrets = GetComponentsInChildren<Turret>();
+
+            var radius = Upgrades.Instance.Radius;
+            SetRadius(radius / 1.5f);
         }
 
         private void Update()
@@ -43,9 +46,9 @@ namespace TowerDefense
             }
         }
 
-        public void ChangeRadius(float radius)
+        private void SetRadius(float radius)
         {
-
+            m_Radius += radius;
         }
 
         private void OnDrawGizmosSelected()

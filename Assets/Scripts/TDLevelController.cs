@@ -30,10 +30,10 @@ namespace TowerDefense
             void LifeScoreChange(int _)
             {
                 levelScore -= 1;
-                TDPlayer.OnLifeUpdate -= LifeScoreChange;
+                TDPlayer.Instance.OnLifeUpdate -= LifeScoreChange;
             }
 
-            TDPlayer.OnLifeUpdate += LifeScoreChange;
+            TDPlayer.Instance.OnLifeUpdate += LifeScoreChange;
         }
 
         private void StopLevelActivity()

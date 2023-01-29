@@ -19,26 +19,22 @@ namespace TowerDefense
         {
             if (Instance)
             {
-                Instance.SaveResult(LevelSequenceController.Instance.CurrentEpisode, levelScore);
+                foreach (var item in Instance.completionData)
+                {
+                    if (item.episode == LevelSequenceController.Instance.CurrentEpisode)
+                    {
+                        if (levelScore > item.score)
+                        {
+                            Instance.totalScore += levelScore - item.score;
+                            item.score = levelScore;
+                            Saver<EpisodeScore[]>.Save(filename, Instance.completionData);
+                        }
+                    }
+                }
             }
             else
             {
                 Debug.Log($"Episode complete with score {levelScore}");
-            }
-        }
-
-        private void SaveResult(Episode currentEpisode, int levelScore)
-        {
-            foreach (var item in completionData)
-            {
-                if (item.episode == currentEpisode)
-                {
-                    if (levelScore > item.score) 
-                    {
-                        item.score = levelScore;
-                        Saver<EpisodeScore[]>.Save(filename, completionData);
-                    }
-                }
             }
         }
 
@@ -56,7 +52,7 @@ namespace TowerDefense
             }
         }
 
-        internal int GetEpisodeScore(Episode m_Episode)
+        public int GetEpisodeScore(Episode m_Episode)
         {
             foreach(var data in completionData)
             {

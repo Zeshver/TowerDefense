@@ -39,7 +39,7 @@ namespace TowerDefense
             Initialize();
         }
 
-        internal void CheckCost(int m_Money)
+        public void CheckCost(int m_Money)
         {
             m_BuyButton.interactable = m_Money >= costNumber;
         }

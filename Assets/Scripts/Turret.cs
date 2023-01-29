@@ -48,11 +48,9 @@ namespace SpaceShooter
 
             if (m_Ship)
             {
-                // кушаем энергию
                 if (!m_Ship.DrawEnergy(m_TurretProperties.EnergyUsage))
                     return;
 
-                // кушаем патроны
                 if (!m_Ship.DrawAmmo(m_TurretProperties.AmmoUsage))
                     return;
             }            
@@ -68,14 +66,10 @@ namespace SpaceShooter
             m_RefireTimer = m_TurretProperties.RateOfFire;
 
             {
-                // SFX на домашку
+                // SFX
             }
         }
 
-        /// <summary>
-        /// Установка свойств турели. Будет использовано в дальнейшем для паверапки.
-        /// </summary>
-        /// <param name="props"></param>
         public void AssignLoadout(TurretProperties props)
         {
             if (m_Mode != props.Mode)

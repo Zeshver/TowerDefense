@@ -11,7 +11,7 @@ namespace TowerDefense
         [SerializeField] private MapLevel m_RootLevel;
         [SerializeField] private int m_NeedPoints = 3;
 
-        internal void TryActivate()
+        public void TryActivate()
         {
             gameObject.SetActive(m_RootLevel.IsComplete);
             if (m_NeedPoints > MapCompletion.Instance.TotalScore)

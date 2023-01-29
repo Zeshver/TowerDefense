@@ -21,7 +21,7 @@ namespace TowerDefense
 
         private void Start()
         {
-            TDPlayer.GoldUpdateSubscribe(GoldStatusCheck);
+            TDPlayer.Instance.GoldUpdateSubscribe(GoldStatusCheck);
             m_TextMeshProUGUI.text = m_TowerAsset.goldCost.ToString();
             m_Button.GetComponent<Image>().sprite = m_TowerAsset.towerGUI;
         }

@@ -1,7 +1,6 @@
 using SpaceShooter;
 using UnityEngine;
 using System;
-using UnityEngine.UIElements;
 
 namespace TowerDefense
 {
@@ -12,15 +11,24 @@ namespace TowerDefense
             get { return Player.Instance as TDPlayer; }
         }
 
-        private static event Action<int> OnGoldUpdate;
-        public static void GoldUpdateSubscribe(Action<int> act)
+        [SerializeField] private UpgradeAsset m_HealthUpgrade;
+
+        private new void Awake()
+        {
+            base.Awake();
+            var healthLevel = Upgrades.Instance.Health;
+            TakeDamage(-healthLevel * 5);
+        }
+
+        private event Action<int> OnGoldUpdate;
+        public void GoldUpdateSubscribe(Action<int> act)
         {
             OnGoldUpdate += act;
             act(Instance.m_Gold);
         }
 
-        public static event Action<int> OnLifeUpdate;
-        public static void LifeUpdateSubscribe(Action<int> act)
+        public event Action<int> OnLifeUpdate;
+        public void LifeUpdateSubscribe(Action<int> act)
         {
             OnLifeUpdate += act;
             act(Instance.NumLives);
@@ -45,19 +53,10 @@ namespace TowerDefense
         public void TryBuild(TowerAsset towerAsset, Transform buildSite)
         {
             ChangeGold(-towerAsset.goldCost);
-            var tower = Instantiate(m_TowerPrefab, buildSite.position, Quaternion.identity); ;
+            var tower = Instantiate(m_TowerPrefab, buildSite.position, Quaternion.identity);
             tower.GetComponentInChildren<SpriteRenderer>().sprite = towerAsset.sprite;
             tower.GetComponentInChildren<Turret>().m_TurretProperties = towerAsset.turretProperties;
             Destroy(buildSite.gameObject);
-        }
-
-        [SerializeField] private UpgradeAsset m_HealthUpgrade;
-
-        private new void Awake()
-        {
-            base.Awake();
-            var level = Upgrades.GetUpgradeLevel(m_HealthUpgrade);
-            TakeDamage(-level * 5);
-        }
+        }        
     }
 }

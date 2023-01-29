@@ -184,6 +184,8 @@ MonoBehaviour:
   m_Gold: 0
   m_TowerPrefab: {fileID: 0}
   m_HealthUpgrade: {fileID: 11400000, guid: 723a7389b3518194e955d0748b1ba87c, type: 2}
+  m_RadiusUpgrade: {fileID: 11400000, guid: 8583f32b90430b24da518c340be1c476, type: 2}
+  m_AttakSpeedUpgrade: {fileID: 11400000, guid: 2d1f23e4348754a4dbb85dbf08268f11, type: 2}
 --- !u!114 &4103879815576243626
 MonoBehaviour:
   m_ObjectHideFlags: 0

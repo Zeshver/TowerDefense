@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6207233846862168664}
-  - component: {fileID: 6207233846862168665}
+  - component: {fileID: 4622428631636645840}
   m_Layer: 0
   m_Name: MageProjectile
   m_TagString: Untagged
@@ -117,7 +117,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6207233846862168665
+--- !u!114 &4622428631636645840
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6207233846862168670}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 044fff8ee6d504946b9961a3b1bc4f7c, type: 3}
+  m_Script: {fileID: 11500000, guid: b177b7a4a6e8b944a88904cfa015d9e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Nickname: 
@@ -134,3 +134,4 @@ MonoBehaviour:
   m_Lifetime: 1
   m_Damage: 5
   m_ImpactEffectPrefab: {fileID: 0}
+  m_DamageType: 1
