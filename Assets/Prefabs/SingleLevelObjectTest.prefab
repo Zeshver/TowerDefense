@@ -70,4 +70,4 @@ MonoBehaviour:
   - asset: {fileID: 11400000, guid: 2d1f23e4348754a4dbb85dbf08268f11, type: 2}
     level: 0
   - asset: {fileID: 11400000, guid: db740ba0b40a85d4e8bb6555257a2155, type: 2}
-    level: 0
+    level: 2

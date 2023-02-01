@@ -3,21 +3,38 @@ using SpaceShooter;
 using System;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 namespace TowerDefense
 {
     public class Abilities : MonoSingleton<Abilities>
     {
-        public interface Usable { void Use(); }
         [Serializable]
-        public class FireAbility: Usable
+        public class FireAbility
         {
             [SerializeField] private int m_Cost = 5;
             [SerializeField] private int m_Damage = 2;
-            public void Use() { }
+            [SerializeField] private Color m_TargetingColor;
+            public void Use() 
+            {
+                ClickProtection.Instance.Activate((Vector2 v) =>
+                {
+                    Vector3 position = v;
+                    position.z = -Camera.main.transform.position.z;
+                    position = Camera.main.ScreenToWorldPoint(position);
+                    foreach(var collider in Physics2D.OverlapCircleAll(position, 5))
+                    {
+                        if (collider.transform.parent.TryGetComponent<Enemy>(out var enemy))
+                        {
+                            enemy.TakeDamage(m_Damage, TDProjectile.DamageType.Magic);
+                        }
+                    }
+                });                
+            }
         }
+
         [Serializable]
-        public class TimeAbility: Usable
+        public class TimeAbility
         {
             [SerializeField] private int m_Cost = 10;
             [SerializeField] private float m_Cooldown = 15f;
@@ -55,6 +72,7 @@ namespace TowerDefense
             }
         }
         [SerializeField] private Button m_TimeButton;
+        [SerializeField] private Image m_TargetingCircle;
 
         [SerializeField] private FireAbility m_FireAbility;
         public void UseFireAbility() => m_FireAbility.Use();
