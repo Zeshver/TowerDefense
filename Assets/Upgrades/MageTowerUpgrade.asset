@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b6e64acad94bf04290563b658f18483, type: 3}
-  m_Name: Turret_02
+  m_Script: {fileID: 11500000, guid: f45ee43b4d32b4348b8fb2e7c6ea5a32, type: 3}
+  m_Name: MageTowerUpgrade
   m_EditorClassIdentifier: 
-  m_Mode: 2
-  m_ProjectilePrefab: {fileID: -897323807312307059, guid: 75e963a45c6b5834ab3043cb341202ec, type: 3}
-  m_RateOfFire: 3
-  m_EnergyUsage: 0
-  m_AmmoUsage: 0
-  m_LaunchSFX: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 1ff55c4a74fcf9b429b49b787ead3395, type: 3}
+  costByLevel: 0100000002000000

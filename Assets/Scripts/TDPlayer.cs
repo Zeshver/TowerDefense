@@ -13,9 +13,8 @@ namespace TowerDefense
 
         [SerializeField] private UpgradeAsset m_HealthUpgrade;
 
-        private new void Awake()
+        private void Start()
         {
-            base.Awake();
             var healthLevel = Upgrades.Instance.Health;
             TakeDamage(-healthLevel * 5);
         }
@@ -54,8 +53,7 @@ namespace TowerDefense
         {
             ChangeGold(-towerAsset.goldCost);
             var tower = Instantiate(m_TowerPrefab, buildSite.position, Quaternion.identity);
-            tower.GetComponentInChildren<SpriteRenderer>().sprite = towerAsset.sprite;
-            tower.GetComponentInChildren<Turret>().m_TurretProperties = towerAsset.turretProperties;
+            tower.Use(towerAsset);
             Destroy(buildSite.gameObject);
         }        
     }

@@ -94,9 +94,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6880222555565516657}
-  - component: {fileID: 3853826402519014104}
+  - component: {fileID: -897323807312307059}
   m_Layer: 0
-  m_Name: ExplosionProjectile
+  m_Name: MProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,7 +118,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3853826402519014104
+--- !u!114 &-897323807312307059
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6880222555565516658}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c857b7a835bd8644abdbe7d3d5873693, type: 3}
+  m_Script: {fileID: 11500000, guid: b177b7a4a6e8b944a88904cfa015d9e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Nickname: 
@@ -135,10 +135,7 @@ MonoBehaviour:
   m_Lifetime: 1
   m_Damage: 5
   m_ImpactEffectPrefab: {fileID: 0}
-  m_ParticleSystemExplosion: {fileID: 6115029718010277459}
-  m_Radius: 2
-  m_ExplosionDamage: 5
-  m_LifeTimeParticleExplosion: 2
+  m_DamageType: 0
 --- !u!1001 &3359160684659146971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -199,10 +196,5 @@ PrefabInstance:
 --- !u!4 &3547347390789460089 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2280113819092721826, guid: 80d3178659bb4e94dbbfef6dbdc9e9b8, type: 3}
-  m_PrefabInstance: {fileID: 3359160684659146971}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &6115029718010277459 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 8809834690285710984, guid: 80d3178659bb4e94dbbfef6dbdc9e9b8, type: 3}
   m_PrefabInstance: {fileID: 3359160684659146971}
   m_PrefabAsset: {fileID: 0}

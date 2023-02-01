@@ -8,7 +8,7 @@ namespace TowerDefense
     {
 
         [SerializeField] private TowerAsset m_TowerAsset;
-
+        public void SetTowerAsset(TowerAsset asset) { m_TowerAsset = asset; }
         [SerializeField] private TextMeshProUGUI m_TextMeshProUGUI;
 
         [SerializeField] private Button m_Button;

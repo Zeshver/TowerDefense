@@ -17,6 +17,22 @@ namespace TowerDefense
             SetRadius(radius / 1.5f);
         }
 
+        public void Use(TowerAsset asset)
+        {
+            GetComponentInChildren<SpriteRenderer>().sprite = asset.sprite;
+            m_Turrets = GetComponentsInChildren<Turret>();
+
+            foreach (var turret in m_Turrets)
+            {
+                turret.AssignLoadout(asset.turretProperties);
+            }
+
+            var radius = Upgrades.Instance.Radius;
+            SetRadius(radius / 1.5f);
+
+            GetComponentInChildren<BuildSite>().SetBuildableTowers(asset.m_UpgradesTo);
+        }
+
         private void Update()
         {
             if (m_Target)

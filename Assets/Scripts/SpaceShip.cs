@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using TowerDefense;
-using Unity.Profiling;
+﻿using TowerDefense;
 using UnityEngine;
 
 namespace SpaceShooter
@@ -18,6 +14,13 @@ namespace SpaceShooter
         [SerializeField] private float m_Mobility;
 
         [SerializeField] private float m_MaxLinearVelocity;
+        private float m_MaxVelocityBackup;
+        public void HalfMaxLinearVelocity() 
+        { 
+            m_MaxVelocityBackup = m_MaxLinearVelocity;
+            m_MaxLinearVelocity /= 2; 
+        }
+        public void RestorMaxLinearVelocity() { m_MaxLinearVelocity = m_MaxVelocityBackup; }
 
         [SerializeField] private float m_MaxAngularVelocity;
 

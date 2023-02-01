@@ -59,12 +59,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 0
-  m_RadiusUpgrade: {fileID: 0}
-  m_AttakSpeedUpgrade: {fileID: 0}
+  m_HealthUpgrade: {fileID: 11400000, guid: 723a7389b3518194e955d0748b1ba87c, type: 2}
+  m_RadiusUpgrade: {fileID: 11400000, guid: 8583f32b90430b24da518c340be1c476, type: 2}
+  m_AttakSpeedUpgrade: {fileID: 11400000, guid: 2d1f23e4348754a4dbb85dbf08268f11, type: 2}
   m_Save:
   - asset: {fileID: 11400000, guid: 723a7389b3518194e955d0748b1ba87c, type: 2}
     level: 0
   - asset: {fileID: 11400000, guid: 8583f32b90430b24da518c340be1c476, type: 2}
     level: 0
   - asset: {fileID: 11400000, guid: 2d1f23e4348754a4dbb85dbf08268f11, type: 2}
+    level: 0
+  - asset: {fileID: 11400000, guid: db740ba0b40a85d4e8bb6555257a2155, type: 2}
     level: 0
