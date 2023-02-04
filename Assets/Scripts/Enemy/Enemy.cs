@@ -41,6 +41,7 @@ namespace TowerDefense
         private void Awake()
         {
             m_Destructible = GetComponent<Destructible>();
+            OnEnd += TDPlayer.Instance.ChangeKills;
         }
 
         public event Action OnEnd;
@@ -65,14 +66,14 @@ namespace TowerDefense
             m_ArmorType = asset.armorType;
             m_Gold = asset.gold;
         }
-        public void DamagePlayer()
-        {
-            TDPlayer.Instance.ChangeLife(m_Damage);
-        }
-        public void GivePlayerGold()
-        {
-            TDPlayer.Instance.ChangeGold(m_Gold);
-        }
+        //public void DamagePlayer()
+        //{
+        //    TDPlayer.Instance.ChangeLife(m_Damage);
+        //}
+        //public void GivePlayerGold()
+        //{
+        //    TDPlayer.Instance.ChangeGold(m_Gold);
+        //}
         public void TakeDamage(int damage, TDProjectile.DamageType damageType)
         {
             m_Destructible.ApplyDamage(ArmorDamageFunctions[(int)m_ArmorType](damage, damageType, m_Armor));

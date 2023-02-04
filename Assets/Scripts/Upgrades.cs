@@ -24,6 +24,12 @@ namespace TowerDefense
         [SerializeField] private UpgradeAsset m_AttakSpeedUpgrade;
         public float AttakSpeed { get { return GetUpgradeLevel(m_AttakSpeedUpgrade); } }
 
+        [SerializeField] private UpgradeAsset m_FireUpgrade;
+        public float Fire { get { return GetUpgradeLevel(m_FireUpgrade); } }
+
+        [SerializeField] private UpgradeAsset m_IceUpgrade;
+        public float Ice { get { return GetUpgradeLevel(m_IceUpgrade); } }
+
         [SerializeField] private UpgradeSave[] m_Save;
 
         private new void Awake()

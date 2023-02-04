@@ -5,7 +5,7 @@ namespace TowerDefense
 {
     public class TextUpdate : MonoBehaviour
     {
-        public enum UpdateSourse { Gold, Life }
+        public enum UpdateSourse { Gold, Life, Kills }
         public UpdateSourse sourse;
         private TextMeshProUGUI m_Text;
 
@@ -19,6 +19,9 @@ namespace TowerDefense
                     break;
                 case UpdateSourse.Life:
                     TDPlayer.Instance.LifeUpdateSubscribe(UpdateText);
+                    break;
+                case UpdateSourse.Kills:
+                    TDPlayer.Instance.KillUpdateSubscribe(UpdateText);
                     break;
 
             }

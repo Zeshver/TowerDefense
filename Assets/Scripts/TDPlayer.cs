@@ -33,6 +33,13 @@ namespace TowerDefense
             act(Instance.NumLives);
         }
 
+        private event Action<int> OnKillsUpdate;
+        public void KillUpdateSubscribe(Action<int> act)
+        {
+            OnKillsUpdate += act;
+            act(Instance.NumKills);
+        }
+
         [SerializeField] private int m_Gold = 0;
 
         public void ChangeGold(int change)
@@ -45,6 +52,12 @@ namespace TowerDefense
         {
             TakeDamage(change);
             OnLifeUpdate(NumLives);
+        }
+
+        public void ChangeKills()
+        {
+            AddKill();
+            OnKillsUpdate(NumKills);
         }
 
         [SerializeField] private Tower m_TowerPrefab;

@@ -3,7 +3,6 @@ using SpaceShooter;
 using System;
 using System.Collections;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
 namespace TowerDefense
 {
@@ -72,6 +71,8 @@ namespace TowerDefense
             }
         }
         [SerializeField] private Button m_TimeButton;
+        [SerializeField] private Button m_FireButton;
+
         [SerializeField] private Image m_TargetingCircle;
 
         [SerializeField] private FireAbility m_FireAbility;
@@ -79,5 +80,17 @@ namespace TowerDefense
 
         [SerializeField] private TimeAbility m_TimeAbility;
         public void UseTimeAbility() => m_TimeAbility.Use();
+
+        private void Start()
+        {
+            if (Upgrades.Instance.Fire <= 0)
+            {
+                Instance.m_FireButton.interactable = false;
+            }
+            if (Upgrades.Instance.Ice <= 0)
+            {
+                Instance.m_TimeButton.interactable = false;
+            }
+        }
     }
 }
