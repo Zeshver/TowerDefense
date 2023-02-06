@@ -54,6 +54,11 @@ namespace SpaceShooter
             NumKills++;
         }
 
+        public void RemoveKill(int killScore)
+        {
+            NumKills -= killScore;
+        }
+
         public void AddScore(int num)
         {
             Score += num;
