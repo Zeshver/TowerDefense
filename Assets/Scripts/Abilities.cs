@@ -107,8 +107,6 @@ namespace TowerDefense
         [SerializeField] private TimeAbility m_TimeAbility;
         public void UseTimeAbility() => m_TimeAbility.Use();
 
-        private List<Abilities> m_Abilities = new List<Abilities>() { };
-
         private void Start()
         {
             Instance.m_FireButton.interactable = false;

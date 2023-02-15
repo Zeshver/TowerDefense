@@ -24,6 +24,10 @@ namespace TowerDefense
         {
             SceneManager.LoadScene(1);
         }
+        public void ReturnMainMenu()
+        {
+            SceneManager.LoadScene(0);
+        }
         public void Quit()
         {
             Application.Quit();

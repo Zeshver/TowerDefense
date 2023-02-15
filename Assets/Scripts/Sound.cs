@@ -4,11 +4,14 @@ namespace TowerDefense
     {
         Arrow = 0,
         ArrowHit = 1,
-        EnemyDie = 2,
-        EnemyWin = 3,
-        PlayerWin = 4,
-        PlayerLose = 5,
-        BGM = 6,        
+        Magic = 2,
+        EnemyDie = 3,
+        EnemyWin = 4,
+        PlayerWin = 5,
+        PlayerLose = 6,
+        BGM = 7, 
+        BGMwin = 8,
+        ButtonSound = 9
     }
     public static class SoundExtensions
     {

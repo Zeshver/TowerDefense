@@ -15,5 +15,4 @@ MonoBehaviour:
   m_EpisodeName: Level_2
   m_Levels:
   - Level_02
-  - CampaignWin
   m_PreviewImage: {fileID: 0}

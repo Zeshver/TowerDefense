@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
+
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
+
 using TowerDefense;
 
 namespace SpaceShooter
@@ -99,6 +103,8 @@ namespace SpaceShooter
         }
     }
 
+
+#if UNITY_EDITOR
     [CustomEditor(typeof(Projectile))]
     public class ProjectileInspector : Editor
     {
@@ -113,5 +119,6 @@ namespace SpaceShooter
             }
         }
     }
+#endif
 }
 

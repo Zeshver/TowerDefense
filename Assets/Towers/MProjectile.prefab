@@ -136,6 +136,8 @@ MonoBehaviour:
   m_Damage: 5
   m_ImpactEffectPrefab: {fileID: 0}
   m_DamageType: 0
+  m_ShotSound: 2
+  m_HitSound: 1
 --- !u!1001 &3359160684659146971
 PrefabInstance:
   m_ObjectHideFlags: 0
